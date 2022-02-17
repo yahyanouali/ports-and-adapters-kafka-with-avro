@@ -4,6 +4,6 @@ import com.purnima.jain.domain.model.Person;
 
 public interface ProducerService {
 	
-	public void sendMessage(Person person);
+	void sendMessage(Person person);
 
 }

@@ -1,20 +1,21 @@
 package com.purnima.jain.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.github.javafaker.Faker;
 import com.purnima.jain.domain.model.Person;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 @Service
 public class BusinessDomainService {
 
 	private static final Logger logger = LoggerFactory.getLogger(BusinessDomainService.class);
 
-	@Autowired
-	ProducerService producerService;
+	private final ProducerService producerService;
+
+	public BusinessDomainService(ProducerService producerService) {
+		this.producerService = producerService;
+	}
 
 	public void generateAndSendMessage() {
 		for (int i = 0; i < 5; i++) {
